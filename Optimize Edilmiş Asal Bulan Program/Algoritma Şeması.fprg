@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<flowgorithm fileversion="2.11">
+    <attributes>
+        <attribute name="name" value=""/>
+        <attribute name="authors" value="Eren"/>
+        <attribute name="about" value=""/>
+        <attribute name="saved" value="2021-10-30 02:26:44 &#214;S"/>
+        <attribute name="created" value="RXJlbjtERVNLVE9QLU5FTkJUUEc7MjAyMS0xMC0xNjswNzozMzowOSDDllM7MjkyMg=="/>
+        <attribute name="edited" value="RXJlbjtERVNLVE9QLU5FTkJUUEc7MjAyMS0xMC0zMDswMjoyNjo0NCDDllM7NDszMDI1"/>
+    </attributes>
+    <function name="Main" type="None" variable="">
+        <parameters/>
+        <body>
+            <output expression="&quot;Girilen basamak say&#305;s&#305;ndaki asal say&#305;lar&#305; bulan program. (Optimize Edilmi&#351;, H&#305;zland&#305;r&#305;lm&#305;&#351; Algoritma)&quot;" newline="True"/>
+            <comment text="2 Hari&#231; di&#287;er &#231;ift say&#305;lar taranm&#305;yor. &#231;ift say&#305;lar taranmad&#305;&#287;&#305; i&#231;in j b&#246;leni 3,5,7 &#351;eklinde tek say&#305;lardan olu&#351;uyor ve bir say&#305;n&#305;n karek&#246;k&#252;nden daha b&#252;y&#252;k farkl&#305; bir b&#246;leni olamayaca&#287;&#305; i&#231;in j b&#246;leni, i say&#305;s&#305;n&#305;n karek&#246;k&#252;ne kadar ilerliyor. Say&#305; asal de&#287;il ise d&#246;ng&#252; direk bitiyor"/>
+            <declare name="ustcarpan" type="Real" array="False" size=""/>
+            <declare name="carpan" type="Real" array="False" size=""/>
+            <declare name="i" type="Real" array="False" size=""/>
+            <declare name="j" type="Real" array="False" size=""/>
+            <declare name="hata" type="Integer" array="False" size=""/>
+            <declare name="sayi" type="Real" array="False" size=""/>
+            <assign variable="carpan" expression="1"/>
+            <input variable="sayi"/>
+            <for variable="i" start="1" end="sayi-1" direction="inc" step="1">
+                <assign variable="carpan" expression="carpan * 10"/>
+            </for>
+            <assign variable="ustcarpan" expression="carpan *10"/>
+            <for variable="i" start="ustcarpan-1" end="carpan" direction="dec" step="2">
+                <assign variable="hata" expression="0"/>
+                <for variable="j" start="3" end="Sqrt(i)" direction="inc" step="2">
+                    <if expression="i%j==0">
+                        <then>
+                            <assign variable="hata" expression="1"/>
+                            <assign variable="j" expression="Sqrt(i)+1"/>
+                        </then>
+                        <else/>
+                    </if>
+                </for>
+                <if expression="hata == 0 &amp;&amp; i!=1">
+                    <then>
+                        <output expression="i" newline="True"/>
+                    </then>
+                    <else/>
+                </if>
+            </for>
+            <if expression="sayi == 1">
+                <then>
+                    <output expression="&quot;2&quot;" newline="True"/>
+                </then>
+                <else/>
+            </if>
+        </body>
+    </function>
+</flowgorithm>
